@@ -112,10 +112,10 @@ body {
 }
 .imagegroup {
   position: relative;
-  width: 650px;
+  width: 700px;
+  height: 500px;
   margin-left: -5%;
-  margin-bottom: 10%;
-  height: 400px;
+  margin-top: -5%;
   border-radius: 25px;
   overflow: hidden;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1),
@@ -147,15 +147,36 @@ body {
 }
 .content h1 {
   font-size: 4rem;
-  margin-bottom: 10%;
+  margin-bottom: 16%;
   margin-left: 2%;
   color: #2d3436;
 }
-.content p {
-  font-size: 1rem;
-  line-height: 1.6;
-  text-align: justify;
+.subheadings {
+  position: relative;
+  height: 50px;
   margin-left: 2%;
+  margin-top: -5%;
+}
+.sub {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  color: #c7a639;
+  font-size: 1.5rem;
+  font-weight: bold;
+  animation: subFade 20s infinite;
+}
+.sub:nth-child(1) { animation-delay: 0s; }
+.sub:nth-child(2) { animation-delay: 4s; }
+.sub:nth-child(3) { animation-delay: 8s; }
+.sub:nth-child(4) { animation-delay: 12s; }
+.sub:nth-child(5) { animation-delay: 16s; }
+@keyframes subFade {
+  0%   { opacity: 0; transform: translateY(20px); }
+  5%   { opacity: 1; transform: translateY(0); }
+  20%  { opacity: 1; transform: translateY(0); }
+  25%  { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 0; transform: translateY(-20px); }
 }
 @media (max-width: 768px) {
   .section1 {
@@ -163,32 +184,29 @@ body {
     padding: 40px 20px;
     text-align: center;
   }
-
   .imagegroup {
     width: 100%;
     max-width: 100%;
     height: auto;
     aspect-ratio: 1 / 1;
     margin-bottom: 30px;
-    object-fit: cover;
     border-radius: 20px;
   }
-
   .slideshow {
     width: 100%;
-    max-width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 20px;
     object-fit: cover;
   }
-
   .content h1 {
     font-size: 2.5rem;
     margin-left: 0;
+    margin-top: -20%;
   }
-
-  .content p {
+  .subheadings {
     margin-left: 0;
   }
+  .sub {
+    font-size: 1.3rem;
+  }
 }
-
