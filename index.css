@@ -101,6 +101,8 @@ body {
 
 
 /* section1 style sheet */
+/* Google font for elegant italic heading */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap');
 .section1 {
   display: flex;
   align-items: center;
@@ -118,8 +120,25 @@ body {
   margin-top: -5%;
   border-radius: 25px;
   overflow: hidden;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1),
-              0 16px 32px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.25),
+    0 30px 60px rgba(0, 0, 0, 0.2),
+    inset 0 4px 8px rgba(255, 255, 255, 0.2); /* inner top light */
+  z-index: 1;
+}
+.imagegroup::after {
+  content: "";
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  height: 45px;
+  background: rgba(0, 0, 0, 0.25);
+  filter: blur(25px);
+  border-radius: 50%;
+  z-index: -1;
 }
 .slideshow {
   position: absolute;
@@ -146,10 +165,12 @@ body {
   min-width: 300px;
 }
 .content h1 {
-  font-size: 4rem;
+  font-size: 5rem;
   margin-bottom: 16%;
   margin-left: 2%;
   color: #2d3436;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
 }
 .subheadings {
   position: relative;
@@ -191,6 +212,16 @@ body {
     aspect-ratio: 1 / 1;
     margin-bottom: 30px;
     border-radius: 20px;
+    box-shadow:
+      0 15px 40px rgba(0, 0, 0, 0.25),
+      0 20px 55px rgba(0, 0, 0, 0.2),
+      inset 0 3px 6px rgba(255, 255, 255, 0.2);
+  }
+  .imagegroup::after {
+    bottom: -30px;
+    width: 90%;
+    height: 40px;
+    filter: blur(20px);
   }
   .slideshow {
     width: 100%;
@@ -202,6 +233,8 @@ body {
     font-size: 2.5rem;
     margin-left: 0;
     margin-top: -20%;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
   }
   .subheadings {
     margin-left: 0;
