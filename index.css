@@ -13,17 +13,9 @@ body {
 
 
 
-/* navbar style sheet */
-/* Elegant Gold Navbar Container */
-/* Elegant Gold Navbar Container */
+/* Elegant Gold Navbar */
 .navbar {
-  background: linear-gradient(
-    135deg,
-    #bfa46f,
-    #fceabb,
-    #bfa46f,
-    #f5e6b3
-  );
+  background: linear-gradient(135deg, #bfa46f, #fceabb, #bfa46f, #f5e6b3);
   background-size: 400% 400%;
   animation: shimmer 15s infinite linear;
   display: flex;
@@ -35,7 +27,6 @@ body {
   z-index: 1000;
   border-bottom: 2px solid rgba(191, 164, 111, 0.5);
 }
-
 @keyframes shimmer {
   0% {
     background-position: 0% 50%;
@@ -47,7 +38,6 @@ body {
     background-position: 0% 50%;
   }
 }
-
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
@@ -65,8 +55,13 @@ body {
   display: flex;
   gap: 3rem;
   transition: all 0.4s ease;
+  position: relative;
+}
+.nav-links li {
+  position: relative;
 }
 .nav-links li a {
+  position: relative;
   text-decoration: none;
   color: rgb(0, 0, 0);
   font-size: 1.1rem;
@@ -77,6 +72,19 @@ body {
 }
 .nav-links li a:hover {
   color: #ffffff;
+}
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #2c2c2c;
+  transition: width 0.3s ease;
+}
+.nav-links li a:hover::after {
+  width: 100%;
 }
 @media (max-width: 768px) {
   .hamburger {
@@ -91,25 +99,23 @@ body {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease;
-    background: linear-gradient(
-      135deg,
-      #c59d26,
-      #ffe780,
-      #d4af37,
-      #f9d976
-    );
+    background: linear-gradient(135deg, #c59d26, #ffe780, #d4af37, #f9d976);
     background-size: 400% 400%;
     animation: shimmer 12s infinite linear;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
   .nav-links.active {
-    max-height: 500px; /* Enough to show all items */
+    max-height: 500px;
   }
   .nav-links li {
     text-align: center;
     padding: 0.8rem 0;
   }
+  .nav-links li a::after {
+    bottom: 0;
+  }
 }
+
 
 
 

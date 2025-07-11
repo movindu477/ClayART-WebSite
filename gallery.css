@@ -15,3 +15,177 @@ body {
 
 
 /* gallery1 style sheet */
+.gallery1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background-color: #f9f9f9;
+}
+.gallery-img {
+  flex: 1 1 100%;
+  max-width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  border-radius: 0;
+  box-shadow: none;
+  animation: none;
+  object-fit: cover;
+  /* Added for clearer rendering */
+  image-rendering: auto; /* or try crisp-edges if needed */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0); /* force GPU rendering for sharpness */
+}
+.gallery-text {
+  flex: 1 1 45%;
+  max-width: 600px;
+  opacity: 0;
+  transform: translateX(80px);
+  animation: slideInText 1.2s ease-out forwards;
+}
+.gallery-text h1 {
+  font-size: 2.9rem;
+  margin-bottom: 1.2rem;
+  color: #ffffff;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  margin-top: -92%;
+  margin-left: -65%;
+}
+.gallery-text p {
+    position: relative;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #dfdfdf;
+  font-family: 'Segoe UI', sans-serif;
+  margin-left: -10%;
+  margin-top: 10%;
+  transform: translate(-50%);
+}
+@keyframes slideInText {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@media (max-width: 1024px) {
+  .gallery1 {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .gallery-img {
+    max-width: 100%;
+    height: 60vh;
+  }
+  .gallery-text {
+    max-width: 100%;
+    transform: translateY(40px);
+    animation: slideUpText 1.2s ease-out forwards;
+  }
+  @keyframes slideUpText {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+
+
+
+
+/* gallery2 style sheet */
+.gallery2 {
+  padding: 4rem 2rem;
+  background-color: #fff8f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.gallery2-container {
+  max-width: 800px;
+  text-align: center;
+  position: relative;
+  margin-top: -10%;
+}
+
+/* Scroll Animation */
+.gallery2-title,
+.gallery2-description {
+  opacity: 0;
+  transform: translateX(0);
+  transition: all 1s ease-out;
+}
+.hidden-left {
+  transform: translateX(-100px);
+}
+.hidden-right {
+  transform: translateX(100px);
+}
+.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Title & Description */
+.gallery2-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #5a3921;
+  font-weight: bold;
+}
+.gallery2-description {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Dropdown and Search */
+.dropdown-search {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.craft-dropdown {
+  padding: 0.7rem 1rem;
+  border: 2px solid gold;
+  border-radius: 6px;
+  background-color: #fff7e1;
+  color: #5a3921;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+/* Style main categories (optgroup labels) */
+.craft-dropdown optgroup {
+  font-weight: bold;
+  color: #5a3921;
+}
+
+/* Style sub-categories (option items) */
+.craft-dropdown option {
+  font-weight: normal;
+  color: #7a6e52;
+}
+
+/* Button */
+.gold-button {
+  padding: 0.7rem 1.5rem;
+  background-color: gold;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.gold-button:hover {
+  background-color: #d4af37;
+}
