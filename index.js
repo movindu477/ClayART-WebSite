@@ -67,3 +67,24 @@ document.addEventListener("DOMContentLoaded", function () {
   // Also check immediately in case section is already visible
   onScroll();
 });
+
+
+
+
+/* top button function */
+  window.onscroll = function () {
+    const toTopBtn = document.getElementById("toTopBtn");
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      toTopBtn.style.display = "block";
+    } else {
+      toTopBtn.style.display = "none";
+    }
+  };
+
+  // Scroll to top on click
+  document.getElementById("toTopBtn").addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
