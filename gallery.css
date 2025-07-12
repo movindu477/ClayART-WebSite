@@ -13,7 +13,6 @@ body {
 
 
 
-
 /* gallery1 style sheet */
 .gallery1 {
   display: flex;
@@ -22,6 +21,7 @@ body {
   gap: 1rem;
   flex-wrap: wrap;
   background-color: #f9f9f9;
+  min-height: 100vh;
 }
 .gallery-img {
   flex: 1 1 100%;
@@ -31,12 +31,10 @@ body {
   border-radius: 0;
   box-shadow: none;
   animation: none;
-  object-fit: cover;
-  /* Added for clearer rendering */
-  image-rendering: auto; /* or try crisp-edges if needed */
+  image-rendering: auto;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  transform: translateZ(0); /* force GPU rendering for sharpness */
+  transform: translateZ(0);
 }
 .gallery-text {
   flex: 1 1 45%;
@@ -55,7 +53,6 @@ body {
   margin-left: -65%;
 }
 .gallery-text p {
-    position: relative;
   font-size: 1.15rem;
   line-height: 1.9;
   color: #dfdfdf;
@@ -72,17 +69,56 @@ body {
 }
 @media (max-width: 1024px) {
   .gallery1 {
-    flex-direction: column-reverse;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    padding: 2rem -5rem;
+    height: 100vh;
+    box-sizing: border-box;
   }
   .gallery-img {
-    max-width: 100%;
-    height: 60vh;
+    display: none;
   }
   .gallery-text {
-    max-width: 100%;
-    transform: translateY(40px);
+    opacity: 0;
     animation: slideUpText 1.2s ease-out forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    max-width: 90%;
+  }
+.gallery-text h1 {
+  position: relative;
+  top: -15%;
+  left: 78%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #000000;
+  text-align: center;
+  line-height: 1.4;
+  width: 90%;              /* Ensure there's enough space to wrap */
+  max-width: 500px;        /* Optional: control max width */
+  word-wrap: break-word;   /* Wrap long words */
+  white-space: normal;     /* Allow text to wrap */
+}
+  .gallery-text p {
+    position: absolute;
+    left: 48%;
+    top: 19%;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #000000;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 350px;
+    word-break: keep-all;
+    white-space: normal;
   }
   @keyframes slideUpText {
     to {
@@ -91,6 +127,8 @@ body {
     }
   }
 }
+
+
 
 
 

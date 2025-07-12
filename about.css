@@ -96,7 +96,7 @@ body {
   .about-text h1 {
     position: relative;
     top: -15%;
-    left: 29%;
+    left: 31%;
     font-size: 2rem; /* Slightly smaller for better fit */
     margin-bottom: 1.5rem;
     color: #000000;
@@ -105,8 +105,8 @@ body {
   }
   .about-text p {
     position: absolute;
-    left: 48%;
-    top: 19%;
+    left: 49%;
+    top: 15%;
     font-size: 1rem;
     line-height: 1.6; /* Tighter line height */
     color: #000000;

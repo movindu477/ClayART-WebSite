@@ -8,6 +8,9 @@
 
 
 
+
+    
+
 /* section2 function */
   // Show section2 when it enters the viewport
   window.addEventListener("scroll", () => {
