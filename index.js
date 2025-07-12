@@ -74,6 +74,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+/* section6 function */
+  document.addEventListener('DOMContentLoaded', () => {
+    const section = document.querySelector('.section6');
+    const image = document.querySelector('.contact-image');
+    const content = document.querySelector('.contact-content');
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          image.classList.add('show');
+          content.classList.add('show');
+          obs.disconnect(); // run only once
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
+
+    observer.observe(section);
+  });
+
+
+
 /* top button function */
   window.onscroll = function () {
     const toTopBtn = document.getElementById("toTopBtn");

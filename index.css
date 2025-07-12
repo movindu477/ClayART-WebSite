@@ -730,6 +730,134 @@ body {
 
 
 
+/* Section 6 Base style sheet */
+.section6 {
+  width: 100%;
+  padding: 80px 5%;
+  background-color: #f9f5ef;
+  overflow: hidden;
+}
+.contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+.contact-image {
+  flex: 1 1 40%;
+  opacity: 0;
+}
+.contact-content {
+  flex: 1 1 50%;
+  opacity: 0;
+}
+.contact-image.show {
+  animation: slideInLeft 1s ease-out forwards;
+}
+.contact-content.show {
+  animation: slideInRight 1s ease-out forwards;
+}
+.contact-image img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+.contact-content h1 {
+  color: #3b3a3a;
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 3.0rem;
+}
+.contact-content p {
+  font-size: 1rem;
+  color: #5b5b5b;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  font-family: 'Open Sans', sans-serif;
+}
+.gold-button.contact-button {
+  background-color: #c9a46c;
+  color: #413f3f;
+  padding: 12px 28px;
+  border: none;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.gold-button.contact-button:hover {
+  background-color: #a07f50;
+  transform: translateY(-3px);
+}
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInRight {
+  0% {
+    transform: translateX(80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .contact-content,
+  .contact-image {
+    flex: 1 1 100%;
+    opacity: 0;
+  }
+  .contact-content.show,
+  .contact-image.show {
+    animation: slideInUp 1s ease-out forwards;
+    opacity: 1;
+  }
+  .contact-content h1 {
+    font-size: 2rem;
+  }
+  .contact-content p {
+    font-size: 1rem;
+    margin: 0 auto 2rem;
+  }
+  .gold-button.contact-button {
+    margin: 0 auto;
+  }
+}
+@keyframes slideInUp {
+  0% {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+
 
 /* MODERN FOOTER STYLE SHEET */
 .footer {
