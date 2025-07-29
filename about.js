@@ -31,3 +31,23 @@ const about4Observer = new IntersectionObserver((entries) => {
 
 const about4Element = document.querySelector('.about4-content');
 about4Observer.observe(about4Element);
+
+
+
+/* top button function */
+  window.onscroll = function () {
+    const toTopBtn = document.getElementById("toTopBtn");
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      toTopBtn.style.display = "block";
+    } else {
+      toTopBtn.style.display = "none";
+    }
+  };
+
+  // Scroll to top on click
+  document.getElementById("toTopBtn").addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
