@@ -4,25 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art Gallery</title>
-    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="studio.css">
     <link rel="stylesheet" href="index.css">
     <script src="index.js" defer></script>
-    <script src="gallery.js" defer></script>
+    <script src="studio.js" defer></script>
 </head>
 <body>
 
-    <nav class="navbar">
-    <div class="logo">HNS</div>
-    <div class="hamburger" id="hamburger">&#9776;</div>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="gallery.html">Art Gallery</a></li>
-      <li><a href="#">Buy Art Now</a></li>
-      <li><a href="#">Other Products</a></li>
-      <li><a href="#">Contact Us</a></li>
-    </ul>
-  </nav>
+<nav class="navbar">
+  <div class="logo">HNS</div>
+  <div class="hamburger" id="hamburger">&#9776;</div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <!-- Dropdown -->
+    <li class="dropdown">
+      <a href="studio.html">Explore Our Studios</a>
+      <ul class="dropdown-menu">
+        <li><a href="air-dry-clay.html">Air Dry Clay Studio</a></li>
+        <li><a href="photographic-studio.html">Photographic Studio</a></li>
+        <li><a href="wall-art.html">Wall Art Studio</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Buy Art Now</a></li>
+    <li><a href="#">Other Products</a></li>
+    <li><a href="#">Contact Us</a></li>
+  </ul>
+</nav>
+<!-- Mobile backdrop -->
+<div class="mobile-backdrop" id="backdrop"></div>
 
 <section class="gallery1">
   <img src="images/gal1.avif" alt="Picture of a Vase" class="gallery-img">
