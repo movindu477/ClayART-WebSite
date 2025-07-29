@@ -14,3 +14,20 @@ const elementsToAnimate = document.querySelectorAll(
 
 // Observe each element
 elementsToAnimate.forEach(el => observer.observe(el));
+
+
+
+
+/* about4 function */
+const about4Observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, {
+  threshold: 0.3
+});
+
+const about4Element = document.querySelector('.about4-content');
+about4Observer.observe(about4Element);
